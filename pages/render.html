@@ -1,0 +1,16 @@
+<div class="jumbotron fade" ng-class="{in:imgs}">
+    <h1>Renderings</h1>
+    <p>Combination of
+        <em>3dsmax</em>,
+        <em>Rhino</em>,
+        <em>Maya</em>and
+        <em>Vray</em>.
+    </p>
+    <p ng-repeat='image in imgs' class="text-center">
+        <a href="{{image}}">
+            <img src="{{image}}" class="img-thumbnail thumbnail ng-cloak">
+        </a>
+    </p>
+
+</div>
+<script src="/js/jquery.lazyload.min.js"></script>
