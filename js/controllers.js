@@ -39,7 +39,7 @@
 	jmartin.controller('renderController', function($scope, $http) {
 			$scope.message = 'Look! I am an photo page.';
 			
-			$http.get('json/render.php').success(function(data) {
+			$http.get('http://jmartin.ca/json/render.php').success(function(data) {
     			$scope.imgs = angular.fromJson(data);
 			});
 
@@ -48,7 +48,7 @@
 	jmartin.controller('photoController', function($scope, $http) {
 			$scope.message = 'Look! I am an photo page.';
 			
-			$http.get('json/photo.php').success(function(data) {
+			$http.get('http://jmartin.ca/json/photo.php').success(function(data) {
     			$scope.imgs = angular.fromJson(data);
 			})
 		}).directive('lazy', function($timeout) {
