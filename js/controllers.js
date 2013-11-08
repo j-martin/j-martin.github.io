@@ -33,12 +33,9 @@
 	// create the controller and inject Angular's $scope
 	jmartin.controller('mainController', function($scope) {
 		$scope.message = 'General Controller!';
-		// showall();
 	});
 
 	jmartin.controller('renderController', function($scope, $http) {
-			$scope.message = 'Look! I am an photo page.';
-			
 			$http.get('http://jmartin.ca/json/render.php').success(function(data) {
     			$scope.imgs = angular.fromJson(data);
 			});
@@ -46,8 +43,6 @@
 		});
 
 	jmartin.controller('photoController', function($scope, $http) {
-			$scope.message = 'Look! I am an photo page.';
-			
 			$http.get('http://jmartin.ca/json/photo.php').success(function(data) {
     			$scope.imgs = angular.fromJson(data);
 			})
@@ -62,6 +57,3 @@
 
 	// Enabling tooltips
 	$('a').tooltip();
-	// $("img.lazy").lazyload({
-	//     effect : "fadeIn"
-	// });
