@@ -1,0 +1,19 @@
+<div class="jumbotron fade" ng-class="{in:imgs}">
+    <h1>Photography</h1>
+    <p class="lead">Here a few pictures I took and that I
+        <em>liked</em>. There's
+        <em>no</em> specific order. The page is rather
+        <strong>large</strong>...</p>
+    <p>
+        <small>The images are loaded
+            <abbr title="Scroll down to make them appear.">lazily</abbr>.</small>
+    </p>
+    <div class="row">
+        <p ng-repeat='image in imgs' ng-cloak class="text-center">
+            <a href="{{image}}">
+                <img data-original="cache{{image}}" src="/img/logo.png" class="img-thumbnail thumbnail centering lazy" width="800px" height="10px">
+            </a>
+        </p>
+    </div>
+</div>
+<script src="/js/jquery.lazyload.min.js"></script>
