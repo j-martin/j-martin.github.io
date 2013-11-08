@@ -1,5 +1,6 @@
 <div class="jumbotron fade" ng-class="{in:imgs}">
     <h1>Renderings</h1>
+<<<<<<< HEAD
     <p>Combination of <em>3dsmax</em>, <em>Rhino</em>, <em>Maya</em> and <em>Vray</em>.</p>
     <div ng-if="raise" class="alert alert-danger text-center">
         <i class="fa fa-exclamation-triangle fa-4x"></i>
@@ -8,6 +9,17 @@
     <p ng-repeat='image in imgs' class="text-center">
         <a href="{{image}}">
             <img src="{{image}}" class="img-thumbnail thumbnail ng-cloak">
+=======
+    <p>Combination of
+        <em>3dsmax</em>,
+        <em>Rhino</em>,
+        <em>Maya</em>and
+        <em>Vray</em>.
+    </p>
+    <p ng-repeat='image in imgs' class="text-center">
+        <a href="http://jmartin.ca{{image}}">
+            <img src="http://jmartin.ca{{image}}" class="img-thumbnail thumbnail ng-cloak">
+>>>>>>> d59673b66dd3fc45567fafb33061f53b1c30a2ec
         </a>
     </p>
 
