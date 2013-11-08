@@ -37,40 +37,37 @@ jmartin.config(function($routeProvider) {
 // create the controller and inject Angular's $scope
 jmartin.controller('mainController', function($scope) {
     $scope.message = 'IamEmpty';
+    $scope.raise = false;
+    $scope.message = 'Aww... The images failed to load.';
 });
 
 jmartin.controller('renderController', function($scope, $http) {
-        $http.get('json/render.php').success(function(data) {
-            $scope.imgs = angular.fromJson(data);
-            $scope.raise = false;
-        }).error(function() {
-            $scope.imgs = [];
-            $scope.raise = true;
-
-        });
+    $http.get('json/render.php').success(function(data) {
+        $scope.imgs = angular.fromJson(data);
+    }).error(function() {
+        $scope.imgs = [];
+        $scope.raise = true;
     });
+});
 
-    jmartin.controller('photoController', function($scope, $http) {
-        $scope.message = 'Look! I am an photo page.';
+jmartin.controller('photoController', function($scope, $http) {
 
-        $http.get('json/photo.php').success(function(data) {
-            $scope.imgs = angular.fromJson(data);
-            $scope.raise = false;
-        }).error(function() {
-            $scope.imgs = [];
-            $scope.raise = true;
-
-        });
-    }).directive('lazy', function($timeout) {
-        return {
-            restrict: 'C',
-            link: function() {
-                $timeout(function() {
-                    $('img.lazy').lazyload();
-                }, 0);
-            }
-        };
+    $http.get('json/photo.php').success(function(data) {
+        $scope.imgs = angular.fromJson(data);
+    }).error(function() {
+        $scope.imgs = [];
+        $scope.raise = true;
     });
+}).directive('lazy', function($timeout) {
+    return {
+        restrict: 'C',
+        link: function() {
+            $timeout(function() {
+                $('img.lazy').lazyload();
+            }, 0);
+        }
+    };
+});
 
-    // Enabling tooltips
-    $('a').tooltip();
+// Enabling tooltips
+$('a').tooltip();
