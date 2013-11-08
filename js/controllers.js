@@ -3,7 +3,7 @@
 /*global angular:false */
 
 // create the module
-var jmartin = angular.module('jmartin', []);
+var jmartin = angular.module('jmartin', ['ngRoute']);
 
 // configure our routes
 jmartin.config(function($routeProvider) {
@@ -40,31 +40,37 @@ jmartin.controller('mainController', function($scope) {
 });
 
 jmartin.controller('renderController', function($scope, $http) {
-    $http.get('json/render.php').success(function(data) {
-        $scope.imgs = angular.fromJson(data);
+        $http.get('json/render.php').success(function(data) {
+            $scope.imgs = angular.fromJson(data);
+            $scope.raise = false;
+        }).error(function() {
+            $scope.imgs = [];
+            $scope.raise = true;
+
+        });
     });
 
-});
+    jmartin.controller('photoController', function($scope, $http) {
+        $scope.message = 'Look! I am an photo page.';
 
-jmartin.controller('photoController', function($scope, $http) {
-    $scope.message = 'Look! I am an photo page.';
+        $http.get('json/photo.php').success(function(data) {
+            $scope.imgs = angular.fromJson(data);
+            $scope.raise = false;
+        }).error(function() {
+            $scope.imgs = [];
+            $scope.raise = true;
 
-    $http.get('json/photo.php').success(function(data) {
-        $scope.imgs = angular.fromJson(data);
-    }).error(function() {
-        $scope.imgs = [];
-
+        });
+    }).directive('lazy', function($timeout) {
+        return {
+            restrict: 'C',
+            link: function() {
+                $timeout(function() {
+                    $('img.lazy').lazyload();
+                }, 0);
+            }
+        };
     });
-}).directive('lazy', function($timeout) {
-    return {
-        restrict: 'C',
-        link: function() {
-            $timeout(function() {
-                $('img.lazy').lazyload();
-            }, 0);
-        }
-    };
-});
 
-// Enabling tooltips
-$('a').tooltip();
+    // Enabling tooltips
+    $('a').tooltip();
