@@ -67,7 +67,7 @@ function generate_thumbnails($dir, $image_list, $cache_path = '../cache/'){
 
 			// Deletes the files if it's old.
 			unlink($thumb);
-			}
+			
 		}
 
 		$image_data = WideImage::load('..' . $image);
