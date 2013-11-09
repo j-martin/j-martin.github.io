@@ -36,7 +36,6 @@ jmartin.config(function($routeProvider) {
 
 // create the controller and inject Angular's $scope
 jmartin.controller('mainController', function($scope) {
-    $scope.message = 'IamEmpty';
     $scope.raise = false;
     $scope.message = 'Aww... The images failed to load.';
 });
