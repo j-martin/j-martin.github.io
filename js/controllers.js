@@ -45,8 +45,14 @@ jmartin.controller('renderController', function($scope, $http) {
     $http.get('json/render.php').success(function(data) {
         $scope.imgs = angular.fromJson(data);
     }).error(function() {
-        $scope.imgs = [];
-        $scope.raise = true;
+
+        $http.get('json/render.json').success(function(data) {
+            $scope.imgs = angular.fromJson(data);
+        }).error(function() {
+
+            $scope.imgs = [];
+            $scope.raise = true;
+        });
     });
 });
 
