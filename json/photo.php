@@ -1,8 +1,11 @@
 <?php
 
-error_reporting(0);
+// error_reporting(0);
 
 $dir = "../img/photo/";
+$file_output = 'photo.json';
+$file_cache_timeout = time() - (7*60*60);
+
 $dh  = opendir($dir);
 $dir_http = ltrim ($dir, '..');
 while (false !== ($filename = readdir($dh))) {
@@ -35,8 +38,7 @@ foreach ($files as $image) {
 		continue;
 		// Remove the continue above to 
 		// Check the file age.
-		$time_a_week_ago = time() - (7*60*60);
-		if (filectime($thumb) > $time_a_week_ago){
+		if (filectime($thumb) > $file_cache_timeout){
 			continue;
 		}else{
 			// Deletes the files if it's old.
@@ -51,6 +53,23 @@ foreach ($files as $image) {
 
 asort($files);
 
-echo json_encode($files);
+$json_output = json_encode($files);
+
+echo $json_output;
+
+if (file_exists($file_output)){
+
+		// Check the file age.
+		if (filectime($file_output) > $file_cache_timeout){
+			continue;
+		}else{
+			// Deletes the files if it's old.
+			unlink($file_output);
+			file_put_contents($file_output, $json_output);
+		}
+	}else{
+			file_put_contents($file_output, $json_output);
+		}
+
 
 ?>
