@@ -1,3 +1,4 @@
-j-martin.github.io
+jmartin.ca
 ==================
-Testing [github hosting](http://git.jmartin.ca) vs my [current hosting](http://jmartin.ca)
+
+My personal website hosted on [github page](http://g.jmartin.ca) and another [host](http://jmartin.ca)
