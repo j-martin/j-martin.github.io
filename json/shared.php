@@ -65,14 +65,8 @@ function generate_thumbnails($dir, $image_list, $cache_path = '../cache/'){
 		
 		if (file_exists($thumb)){
 
-			continue;
-			// Remove the continue above to 
-			// Check the file age.
-			if (filectime($thumb) > $file_cache_timeout){
-				continue;
-			}else{
-				// Deletes the files if it's old.
-				unlink($thumb);
+			// Deletes the files if it's old.
+			unlink($thumb);
 			}
 		}
 
