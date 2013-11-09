@@ -45,7 +45,7 @@ jmartin.controller('renderController', function($scope, $http) {
     $http.get('json/render.php').success(function(data) {
         $scope.imgs = angular.fromJson(data);
     }).error(function() {
-
+        //Tries to load the static json instead.
         $http.get('json/render.json').success(function(data) {
             $scope.imgs = angular.fromJson(data);
         }).error(function() {
@@ -61,6 +61,8 @@ jmartin.controller('photoController', function($scope, $http) {
     $http.get('json/photo.php').success(function(data) {
         $scope.imgs = angular.fromJson(data);
     }).error(function() {
+
+        //Tries to load the static json instead.
         $http.get('json/photo.json').success(function(data) {
             $scope.imgs = angular.fromJson(data);
         }).error(function() {
