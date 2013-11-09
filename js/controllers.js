@@ -42,33 +42,22 @@ jmartin.controller('mainController', function($scope) {
 });
 
 jmartin.controller('renderController', function($scope, $http) {
-    $http.get('json/render.php').success(function(data) {
+    $http.get('json/render.json').success(function(data) {
         $scope.imgs = angular.fromJson(data);
     }).error(function() {
-        //Tries to load the static json instead.
-        $http.get('json/render.json').success(function(data) {
-            $scope.imgs = angular.fromJson(data);
-        }).error(function() {
-
-            $scope.imgs = [];
-            $scope.raise = true;
-        });
+        $scope.imgs = [];
+        $scope.raise = true;
     });
 });
 
 jmartin.controller('photoController', function($scope, $http) {
 
-    $http.get('json/photo.php').success(function(data) {
+    $http.get('json/photo.json').success(function(data) {
         $scope.imgs = angular.fromJson(data);
-    }).error(function() {
 
-        //Tries to load the static json instead.
-        $http.get('json/photo.json').success(function(data) {
-            $scope.imgs = angular.fromJson(data);
-        }).error(function() {
-            $scope.imgs = [];
-            $scope.raise = true;
-        });
+    }).error(function() {
+        $scope.imgs = [];
+        $scope.raise = true;
     });
 }).directive('lazy', function($timeout) {
     return {
