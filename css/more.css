@@ -65,25 +65,25 @@ hr {
     border: 0;
     border-top: 1px solid #3D3D3D;
 }
-.fade {
+/*.fade {
     opacity: 0;
     -webkit-transition: opacity 1s ease-in;
     -moz-transition: opacity 1s ease-in;
     -o-transition: opacity 1s ease-in;
     -ms-transition: opacity 1s ease-in;
     transition: opacity 1s ease-in;
-}
+}*/
 .fa-5x {
     color:#ddd;
     padding: 20px 0;
 }
-.fade.in {
+/*.fade.in {
     -webkit-animation-delay: 2s;
     -moz-animation-delay: 2s;
     -ms-animation-delay: 2s;
     -o-animation-delay: 2s;
     opacity: 1;
-}
+}*/
 .img {
     display: block;
     opacity: 1;
