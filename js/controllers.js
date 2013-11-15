@@ -3,7 +3,7 @@
 /*global angular:false */
 
 // create the module
-var jmartin = angular.module('jmartin', ['ngRoute']);
+var jmartin = angular.module('jmartin', ['ngRoute', 'ngAnimate']);
 
 // configure our routes
 jmartin.config(function($routeProvider) {
@@ -36,8 +36,8 @@ jmartin.config(function($routeProvider) {
 
 // create the controller and inject Angular's $scope
 jmartin.controller('mainController', function($scope) {
-    $scope.raise = false;
     $scope.message = 'Aww... The images failed to load.';
+    $scope.raise = false;
 });
 
 jmartin.controller('renderController', function($scope, $http) {

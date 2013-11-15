@@ -78,6 +78,10 @@ hr {
     padding: 20px 0;
 }
 .fade.in {
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    -ms-animation-delay: 2s;
+    -o-animation-delay: 2s;
     opacity: 1;
 }
 .img {
@@ -98,4 +102,24 @@ hr {
 }
 .things_i_like > li > a {
     font-weight: bold;
+}
+.ng-enter {
+    -webkit-animation-delay: -5s;
+    -moz-animation-delay: -5s;
+    -ms-animation-delay: -5s;
+    -o-animation-delay: -5s;
+    -webkit-animation: fadeInDown 1s;
+    -moz-animation: fadeInDown 1s;
+    -ms-animation: fadeInDown 1s;
+    animation: fadeInDown 1s;
+}
+.ng-leave {
+    -webkit-animation-delay: -5s;
+    -moz-animation-delay: -5s;
+    -ms-animation-delay: -5s;
+    -o-animation-delay: -5s;
+    -webkit-animation: fadeOut .25s;
+    -moz-animation: fadeOut .25s;
+    -ms-animation: fadeOut .25s;
+    animation: fadeOut .25s;
 }
