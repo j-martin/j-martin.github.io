@@ -1,1 +1,8 @@
+RewriteEngine on
 Options -Indexes
+RewriteCond %{HTTP_HOST} ^archer\.pro$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.archer\.pro$
+RewriteRule ^/?$ "http\:\/\/jmartin\.ca\/" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^www\.jmartin\.ca$
+RewriteRule ^/?$ "http\:\/\/jmartin\.ca\/" [R=301,L]
