@@ -13,7 +13,7 @@ module.exports = function(grunt) {
                         './lib/angular-1.2.0/angular.js',
                         './lib/angular-1.2.0/angular-animate.js',
                         './lib/angular-1.2.0/angular-route.js',
-                        '/js/jquery.lazyload.min.js',
+                        './lib/jquery.lazyload.js',
                     ],
                 }
             }
