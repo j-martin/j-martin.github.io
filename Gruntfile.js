@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                 files: {
                     './js/min.js': [
                         './lib/jquery-2.0.3.js',
-                        './lib/bootstrap-3.0.2/js/bootstrap.js',
+                        './lib/bootstrap-3.0.2/js/bootstrap-stripped.js',
                         './lib/angular-1.2.0/angular.js',
                         './lib/angular-1.2.0/angular-animate.js',
                         './lib/angular-1.2.0/angular-route.js',
