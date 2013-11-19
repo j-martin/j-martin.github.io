@@ -39,7 +39,7 @@
 .fa-4x {
   font-size: 4em;
 }
-*/.fa-5x {
+.fa-5x {
   font-size: 5em;
 }
 .fa-fw {
@@ -190,7 +190,7 @@
 }
 .fa-inverse {
   color: #ffffff;
-}
+}*/
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
    readers do not read off random characters that represent icons */
 /*.fa-glass:before {
