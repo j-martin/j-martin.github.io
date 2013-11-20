@@ -41,7 +41,7 @@ jmartin.controller('mainController', function($scope) {
 });
 
 jmartin.controller('renderController', function($scope, $http) {
-    $http.get('img/render.json').success(function(data) {
+    $http.get('json/render.json').success(function(data) {
         $scope.imgs = angular.fromJson(data);
     }).error(function() {
         $scope.imgs = [];
@@ -51,7 +51,7 @@ jmartin.controller('renderController', function($scope, $http) {
 
 jmartin.controller('photoController', function($scope, $http) {
 
-    $http.get('img/photo.json').success(function(data) {
+    $http.get('json/photo.json').success(function(data) {
         $scope.imgs = angular.fromJson(data);
 
     }).error(function() {
