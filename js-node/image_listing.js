@@ -10,6 +10,15 @@
 var fs = require('fs'),
 im = require('imagemagick');
 
+var keep_images = function(file){
+   
+    var extension = file.split('.').pop();
+    if (extension == 'jpg' || extension == 'png' ){
+        return file;
+    }
+    
+};
+
 var image_listing = {
 
     base_dir: '../img/',
@@ -24,7 +33,9 @@ var image_listing = {
 
     get_files: function() {
 
-        this.files = fs.readdirSync(this.path_dir);
+        var files = fs.readdirSync(this.path_dir);
+
+        this.files = files.filter(keep_images);
 
         var json_path = this.json_dir + this.name + '.json';
 
@@ -49,10 +60,11 @@ var image_listing = {
                 im.resize({
                   srcPath: file_path_original,
                   dstPath: file_path_cache,
-                  width:   800
+                  width:   800,
+                  quality: 0.9,
                 }, function(err, stdout, stderr){
                   if (err) throw err;
-                  console.log('resized kittens.jpg to fit within 256x256px');
+                  console.log('Cached: ' + file_path_original);
                 });
             }
 
