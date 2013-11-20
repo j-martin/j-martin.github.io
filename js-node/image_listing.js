@@ -16,7 +16,6 @@ var keep_images = function(file){
     if (extension == 'jpg' || extension == 'png' ){
         return file;
     }
-    
 };
 
 var image_listing = {
@@ -41,7 +40,6 @@ var image_listing = {
 
         var json_data = JSON.stringify(this.files);
         fs.writeFileSync(json_path, json_data);
-
     },
 
     caching: function() {
@@ -67,7 +65,6 @@ var image_listing = {
                   console.log('Cached: ' + file_path_original);
                 });
             }
-
         }, this);
     }
 };
