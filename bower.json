@@ -11,6 +11,7 @@
     "angular-latest": ">= 1.2.0",
     "jquery": ">= 2.0.3",
     "bootstrap": "3.0.2",
-    "jquery.lazyload": "1.9.1"
+    "jquery.lazyload": "1.9.1",
+    "font-awesome": ">=4.0.3"
   }
 }
