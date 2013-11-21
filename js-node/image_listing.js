@@ -69,8 +69,8 @@ var image_listing = {
     }
 };
 
-var render = image_listing;
-var photo = image_listing;
+var render = new image_listing;
+var photo = new image_listing;
 
 render.set_name('render');
 photo.set_name('photo');
