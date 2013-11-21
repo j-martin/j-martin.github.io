@@ -1,3 +1,5 @@
+// Runs a server on port 5000. Works locally and on Heroku.
+
 var express = require("express"),
     app     = express(),
     port    = parseInt(process.env.PORT, 10) || 5000;
