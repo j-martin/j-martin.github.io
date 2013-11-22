@@ -29,24 +29,11 @@ module.exports = function(grunt) {
                 }
             }
         },
-        php_builder: {
-            options: {
-                // Task-specific options go here.
-            },
-            files: {
-                './img/post/': [
-                    './img/photo.php',
-                    './img/render.php',
-                ]
-
-            }
-        }
     });
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('chop-grunt-php-builder');
+    grunt.loadNpmTasks('grunt-contrib-jasmine');
 
     grunt.registerTask('default', ['uglify', 'cssmin']);
-    grunt.registerTask('php', ['php_builder']);
 
 };
