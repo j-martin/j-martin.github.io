@@ -1,33 +1,39 @@
 'use strict';
- /*global angular:false */
- /*global describe:false */
- /*global beforeEach:false */
- /*global expect:false */
- /*global it:false */
- /*global $httpBackend:false */
+/*global $httpBackend:false */
+/*global angular:false */
+/*global beforeEach:false */
+/*global console:false */
+/*global describe:false */
+/*global expect:false */
+/*global it:false */
 
-describe('renderController', function(){
-    var scope;
- 
-    //mock Application to allow us to inject our own dependencies
+describe('renderController', function() {
+    var scope = {};
+
+    scope.mesage = 'Images: Loaded!';
+
     beforeEach(angular.mock.module('jmartin'));
-    //mock the controller for the same reason and include $rootScope and $controller
-    beforeEach(angular.mock.inject(function($rootScope, $controller, _$httpBackend_){
+    beforeEach(angular.mock.inject(function($rootScope, $controller, _$httpBackend_) {
         $httpBackend = _$httpBackend_;
-        $httpBackend.when('GET', '/json/render.json').respond([{id: 1, name: 'Bob'}, {id:2, name: 'Jane'}]);
- 
-        //create an empty scope
+        $httpBackend.when('GET', '/json/render.json').respond(['test.jpg', 't2.jpg']);
+
         scope = $rootScope.$new();
-        //declare the controller and inject our empty scope
-        $controller('renderController', {$scope: scope});
+
+        $controller('renderController', {
+            $scope: scope
+        });
+    }));
+
+    // console.log(scope);
+
+    it('should have variable text = "Images Loaded!"', function() {
+        expect(scope.message).toBe('Images: Loaded!');
     });
-    // tests start here
-    it('should have variable text = "Hello World!"', function(){
-        expect(scope.text).toBe('Hello World!');
-    });
-    it('should fetch list of users', function(){
-        $httpBackend.flush();
-        expect(scope.users.length).toBe(2);
-        expect(scope.users[0].name).toBe('Bob');
+    // console.log(scope);
+    it('should fetch list images', function() {
+        // $httpBackend.flush();
+        // console.log(scope);
+        expect(scope.imgs.length).toBe(2);
+        expect(scope.imgs[0]).toBe('t2.jpg');
     });
 });

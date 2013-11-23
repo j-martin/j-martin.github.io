@@ -36,12 +36,13 @@ jmartin.config(function($routeProvider) {
 
 // create the controller and inject Angular's $scope
 jmartin.controller('mainController', function($scope) {
-    $scope.message = 'Aww... The images failed to load.';
+    $scope.message = 'Welcome!';
     $scope.raise = false;
 });
 
 jmartin.controller('renderController', function($scope, $http) {
     $http.get('json/render.json').success(function(data) {
+        $scope.message = 'Images: Loaded!'
         $scope.imgs = angular.fromJson(data);
     }).error(function() {
         $scope.imgs = [];
