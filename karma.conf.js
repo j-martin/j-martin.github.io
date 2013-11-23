@@ -9,16 +9,15 @@ module.exports = function(config) {
 
 
     // frameworks to use
-    frameworks: ['jasmine','ng-scenario'],
+    frameworks: ['jasmine'],
 
 
     // list of files / patterns to load in the browser
     files: [
       'js/min.js',
-      'bower_components/angular-latest/src/ngMock/angular-mocks.js',
+      'bower_components/angular-mocks/angular-mocks.js',
       'js/controllers.js',
 //      'js-node/*.js',
-      'tests/*.*.js',
       'tests/*.js'
     ],
 
