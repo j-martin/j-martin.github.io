@@ -1,22 +1,30 @@
-// Runs a server on port 5000. Works locally and on Heroku.
+#!/bin/env node
+//  OpenShift sample Node application
+var http = require('http');
 
-var express = require("express"),
-    app     = express(),
-    port    = parseInt(process.env.PORT, 10) || 8080;
-    
-app.get("/", function(req, res) {
-  res.redirect("index.html");
-});
+//Get the environment variables we need.
+var ipaddr  = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port    = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
-app.configure(function(){
-  app.use(express.methodOverride());
-  app.use(express.bodyParser());
-  app.use(express.static(__dirname + '/'));
-  app.use(express.errorHandler({
-    dumpExceptions: true, 
-    showStack: true
-  }));
-  app.use(app.router);
-});
+http.createServer(function (req, res) {
+        var addr = "unknown";
+        var out = "";
+        if (req.headers.hasOwnProperty('x-forwarded-for')) {
+                addr = req.headers['x-forwarded-for'];
+        } else if (req.headers.hasOwnProperty('remote-addr')){
+                addr = req.headers['remote-addr'];
+        }
 
-app.listen(port);
+        if (req.headers.hasOwnProperty('accept')) {
+                if (req.headers['accept'].toLowerCase() == "application/json") {
+                          res.writeHead(200, {'Content-Type': 'application/json'});
+                          res.end(JSON.stringify({'ip': addr}, null, 4) + "\n");                        
+                          return ;
+                }
+        }
+        
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.write("Welcome to Node.js on OpenShift!\n\n");
+  res.end("Your IP address seems to be " + addr + "\n");
+}).listen(port, ipaddr);
+console.log("Server running at http://" + ipaddr + ":" + port + "/");
