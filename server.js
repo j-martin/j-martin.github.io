@@ -1,7 +1,7 @@
 #!/bin/env node
 //Get the environment variables we need.
 var ipaddr  = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-var port    = process.env.OPENSHIFT_NODEJS_PORT || 5000;
+var port    = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 5000;
 
 var express = require("express"),
     app     = express()
