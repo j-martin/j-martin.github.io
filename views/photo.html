@@ -1,0 +1,22 @@
+<div class="jumbotron fade" ng-class="{in:imgs}">
+    <h1>Photography</h1>
+    <p class="lead">Here a few pictures I took and that I
+        <em>liked</em>. There's
+        <em>no</em> specific order. The page is rather
+        <strong>large</strong>...</p>
+
+    <div ng-if="raise" class="alert alert-danger text-center">
+        <i class="fa fa-exclamation-triangle fa-4x"></i>
+        <br>{{message}}
+    </div>
+    <p ng-if="raise == false">
+        <small>The images are loaded
+            <abbr title="Scroll down to make them appear.">lazily</abbr>.</small>
+    </p>
+    <p ng-repeat='image in imgs' ng-cloak class="text-center">
+        <a href="img/photo/{{image}}">
+            <img data-original="cache/img/photo/{{image}}" src="/img/logo.png" class="img-thumbnail thumbnail centering lazy" width="800px" height="10px">
+        </a>
+    </p>
+</div>
+</div>

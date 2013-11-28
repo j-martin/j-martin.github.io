@@ -8,12 +8,12 @@ module.exports = function(grunt) {
             target: {
                 files: {
                     './js/min.js': [
-                        './lib/jquery-2.0.3.js',
-                        './lib/bootstrap-3.0.2/js/bootstrap-stripped.js',
-                        './lib/angular-1.2.0/angular.js',
-                        './lib/angular-1.2.0/angular-animate.js',
-                        './lib/angular-1.2.0/angular-route.js',
-                        './lib/jquery.lazyload.js',
+                        './bower_components/jquery/jquery.js',
+                        './js/bootstrap-stripped.js',
+                        './bower_components/angular/angular.js',
+                        './bower_components/angular-route/angular-route.js',
+                        './bower_components/angular-animate/angular-animate.js',
+                        './bower_components/jquery.lazyload/jquery.lazyload.js'
                     ],
                 }
             }
@@ -22,8 +22,8 @@ module.exports = function(grunt) {
             combine: {
                 files: {
                     './css/min.css': [
-                        './lib/bootstrap-3.0.2/css/bootstrap.css',
-                        './lib/font-awesome-4.0.3/css/font-awesome-stripped.css',
+						'./css/bootstrap-stripped.css',
+                        './css/font-awesome-stripped.css',
                         './css/more.css'
                     ]
                 }

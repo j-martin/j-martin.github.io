@@ -11,25 +11,25 @@ jmartin.config(function($routeProvider) {
 
     // route for the home page
     .when('/', {
-        templateUrl: 'pages/home.html',
+        templateUrl: 'views/home.html',
         controller: 'mainController'
     })
 
     // route for the about page
     .when('/about', {
-        templateUrl: 'pages/about.html',
+        templateUrl: 'views/about.html',
         controller: 'mainController'
     })
 
     // route for the photo page
     .when('/photo', {
-        templateUrl: 'pages/photo.html',
+        templateUrl: 'views/photo.html',
         controller: 'photoController'
     })
 
     // route for the render page
     .when('/render', {
-        templateUrl: 'pages/render.html',
+        templateUrl: 'views/render.html',
         controller: 'renderController'
     });
 });
