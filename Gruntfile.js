@@ -4,6 +4,15 @@ module.exports = function(grunt) {
     'use strict';
     // Project configuration.
     grunt.initConfig({
+        copy: {
+          main: {
+            flatten: true,
+            filter: 'isFile',
+            expand: true,
+            src: 'bower_components/font-awesome/fonts/*',
+            dest: 'fonts/',
+          },
+        },
         uglify: {
             target: {
                 files: {
@@ -32,8 +41,9 @@ module.exports = function(grunt) {
     });
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
 
-    grunt.registerTask('default', ['uglify', 'cssmin']);
+    grunt.registerTask('default', ['copy','uglify', 'cssmin']);
 
 };
