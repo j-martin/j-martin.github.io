@@ -8,21 +8,24 @@ __copyright__   = "MIT License"
 
 from fabric.api import run, local
 
-def commit():
+def commit_and_push():
 	"""
 	Local commit before updating everything.
 	"""
 
 	local('git commit -am pushing\ to\ other\ servers.')
+	local('git push')
 	return True
 
-def server_pull(hosts = ['alpha']):
+def staging_pull(hosts = ['alpha']):
 	"""
 	Connects to the home server which updates the other servers.
 
 	Once the repo has been pulled the Puppet agents running on other servers
 	will also update themselves.
 	"""
+	
+	env.hosts = hosts
 
 	run ('cd /home/shared/website/')
 	run ('git pull')
@@ -41,8 +44,8 @@ def big_push():
 	Pushes everything to all the servers
 	"""
 
-	commit()
+	commit_and_push()
 	push_to_cloud()
-	push_to_ftp()
+	pull_to_staging()
 
 	return True
