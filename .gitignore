@@ -1,4 +1,4 @@
-.pyc
+*.py[co]
 .DAV
 .DS_Store
 node_modules
