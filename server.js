@@ -28,14 +28,6 @@ app.get('/', function(req, res) {
     res.sendfile('index.html');
 });
 
-// app.post('/svg', function(req, res) {
-//     console.log('body:', req.body, 'query:', req.query);
-//     res.type('application/svg');
-//     res.send(req.body);
-//     // res.send()
-//     res.end();
-// });
-
 if (!ipaddr) {
     app.listen(port);
 } else {
