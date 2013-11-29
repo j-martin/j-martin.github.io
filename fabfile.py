@@ -6,11 +6,11 @@ __author__      = "Jean-Martin Archer"
 __copyright__   = "MIT License"
 
 
-from fabric.api import run, local
+from fabric.api import run, local, env, cd
 
-def commit_and_push():
+def commit_push():
 	"""
-	Local commit before updating everything.
+	Local commit and push to GitHub before updating everything else.
 	"""
 
 	local('git commit -am pushing\ to\ other\ servers.')
@@ -27,13 +27,13 @@ def staging_pull(hosts = ['alpha']):
 	
 	env.hosts = hosts
 
-	run ('cd /home/shared/website/')
-	run ('git pull')
-	run ('git-ftp -s main push')
-	run ('git-ftp -s euro push')
+	with cd('/home/shared/website/'):
+		run ('git pull')
+		run ('git-ftp -s main push')
+		run ('git-ftp -s europe push')
 	return True
 
-def push_to_cloud(servers = ['heroku', 'rhc']):
+def push2cloud(servers = ['heroku', 'rhc']):
 	for server in servers:
 		local('git push %s master' % server)
 
@@ -44,8 +44,8 @@ def big_push():
 	Pushes everything to all the servers
 	"""
 
-	commit_and_push()
-	push_to_cloud()
-	pull_to_staging()
+	commit_push()
+	push2cloud()
+	staging_pull()
 
 	return True
