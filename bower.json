@@ -18,6 +18,7 @@
         "angular-sanitize": "1.2.0",
         "angular-route": "1.2.0",
         "angular-animate": "1.2.0"
+        "echo" : "https://github.com/toddmotto/echo.git"
     },
     "devDependencies": {
         "angular-mocks": "1.2.0",
