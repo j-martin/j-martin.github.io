@@ -44,7 +44,6 @@ def big_push():
 	Pushes everything to all the servers
 	"""
 
-	commit_push()
 	push2cloud()
 	staging_pull()
 
