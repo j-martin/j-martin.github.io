@@ -1,6 +1,4 @@
 'use strict';
-/*global $:false */
-/*global angular:false */
 
 // create the module
 var jmartin = angular.module('jmartin', ['ngRoute', 'ngAnimate']);
@@ -42,7 +40,7 @@ jmartin.controller('mainController', function($scope) {
 
 jmartin.controller('renderController', function($scope, $http) {
     $http.get('/public/json/render.json').success(function(data) {
-        $scope.message = 'Images: Loaded!'
+        $scope.message = 'Images: Loaded!';
         $scope.imgs = angular.fromJson(data);
     }).error(function() {
         $scope.imgs = [];
@@ -64,7 +62,10 @@ jmartin.controller('photoController', function($scope, $http) {
         restrict: 'C',
         link: function() {
             $timeout(function() {
-                Echo.init({offset: 100, throttle: 250 });
+                Echo.init({
+                    offset: 100,
+                    throttle: 250
+                });
             }, 0);
         }
     };
