@@ -11,25 +11,25 @@ jmartin.config(function($routeProvider) {
 
     // route for the home page
     .when('/', {
-        templateUrl: 'views/home.html',
+        templateUrl: '/public/views/home.html',
         controller: 'mainController'
     })
 
     // route for the about page
     .when('/about', {
-        templateUrl: 'views/about.html',
+        templateUrl: '/public/views/about.html',
         controller: 'mainController'
     })
 
     // route for the photo page
     .when('/photo', {
-        templateUrl: 'views/photo.html',
+        templateUrl: '/public/views/photo.html',
         controller: 'photoController'
     })
 
     // route for the render page
     .when('/render', {
-        templateUrl: 'views/render.html',
+        templateUrl: '/public/views/render.html',
         controller: 'renderController'
     });
 });
@@ -41,7 +41,7 @@ jmartin.controller('mainController', function($scope) {
 });
 
 jmartin.controller('renderController', function($scope, $http) {
-    $http.get('json/render.json').success(function(data) {
+    $http.get('/public/json/render.json').success(function(data) {
         $scope.message = 'Images: Loaded!'
         $scope.imgs = angular.fromJson(data);
     }).error(function() {
@@ -52,7 +52,7 @@ jmartin.controller('renderController', function($scope, $http) {
 
 jmartin.controller('photoController', function($scope, $http) {
 
-    $http.get('json/photo.json').success(function(data) {
+    $http.get('/public/json/photo.json').success(function(data) {
         $scope.imgs = angular.fromJson(data);
 
     }).error(function() {

@@ -10,15 +10,15 @@ module.exports = function(grunt) {
             filter: 'isFile',
             expand: true,
             src: 'bower_components/font-awesome/fonts/*',
-            dest: 'fonts/',
+            dest: './public/fonts/',
           },
         },
         uglify: {
             target: {
                 files: {
-                    './js/min.js': [
+                    './public/js/min.js': [
                         './bower_components/jquery/jquery.js',
-                        './js/bootstrap-stripped.js',
+                        './public/js/bootstrap-stripped.js',
                         './bower_components/angular/angular.js',
                         './bower_components/angular-route/angular-route.js',
                         './bower_components/angular-animate/angular-animate.js',
@@ -31,10 +31,10 @@ module.exports = function(grunt) {
         cssmin: {
             combine: {
                 files: {
-                    './css/min.css': [
-						'./css/bootstrap-stripped.css',
-                        './css/font-awesome-stripped.css',
-                        './css/more.css'
+                    './public/css/min.css': [
+						'./public/css/bootstrap-stripped.css',
+                        './public/css/font-awesome-stripped.css',
+                        './public/css/more.css'
                     ]
                 }
             }
