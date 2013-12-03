@@ -64,7 +64,7 @@ jmartin.controller('photoController', function($scope, $http) {
         restrict: 'C',
         link: function() {
             $timeout(function() {
-                $('img.lazy').lazyload();
+                Echo.init({offset: 100, throttle: 250 });
             }, 0);
         }
     };
