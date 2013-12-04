@@ -1,16 +1,18 @@
 /* jshint node: true */
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   'use strict';
   // Project configuration.
   grunt.initConfig({
-    jsonimgs: {
+    image_processor: {
       photo: {
-        files: './public/img/photo/',
+        src: './public/img/photo/*.jpg',
+        dest: './public/json/photo.json',
         cache: './public/cache/img/photo/'
       },
       render: {
-        files: './public/img/render/',
+        src: './public/img/render/*.jpg',
+        dest: './public/json/render.json'
       }
     },
 
@@ -111,12 +113,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadTasks('tasks');
 
-
   grunt.registerTask('default', [
     'copy',
-    // 'clean',
+    'clean',
     'uglify',
-    'jsonimgs',
+    'image_processor',
     'cssmin'
   ]);
   grunt.registerTask('server', [
