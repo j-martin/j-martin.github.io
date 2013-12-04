@@ -32,7 +32,7 @@ module.exports = function (grunt) {
     },
     jshint: {
       all: ['Gruntfile.js',
-        './node.js/*.js',
+        './tasks/*.js',
         './js/*.js'
       ],
       options: {
@@ -122,7 +122,7 @@ module.exports = function (grunt) {
   ]);
   grunt.registerTask('server', [
     'default',
-    'shell'
+    'shell.launchExpress'
   ]);
   grunt.registerTask('clean', [
     'jsbeautifier:modify',

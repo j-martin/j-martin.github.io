@@ -1,10 +1,9 @@
-'use strict';
-
 // create the module
 var jmartin = angular.module('jmartin', ['ngRoute', 'ngAnimate']);
 
 // configure our routes
 jmartin.config(function ($routeProvider) {
+  'use strict';
   $routeProvider
 
   // route for the home page
