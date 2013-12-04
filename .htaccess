@@ -7,6 +7,10 @@ RewriteRule ^/?$ "http\:\/\/jmartin\.ca\/" [R=301,L]
 RewriteCond %{HTTP_HOST} ^www\.jmartin\.ca$
 RewriteRule ^/?$ "http\:\/\/jmartin\.ca\/" [R=301,L]
 
+RewriteCond %{REQUEST_URI}  ^/$
+RewriteCond %{QUERY_STRING} ^_escaped_fragment_=/?(.*)$
+RewriteRule ^(.*)$ /public/views/%1? [NC,L]
+
 ## EXPIRES CACHING ##
 <IfModule mod_expires.c>
 ExpiresActive On

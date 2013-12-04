@@ -6,29 +6,34 @@
         "url": "git://github.com/j-martin/j-martin.github.io.git"
     },
     "devDependencies": {
-        "express": "~3.1.2",
-        "grunt": "~0.4.1",
-        "grunt-contrib-cssmin": "~0.7.0",
-        "grunt-contrib-jasmine": "0.5.2",
-        "grunt-jsbeautifier": "~0.2.3",
-        "grunt-contrib-jshint": "~0.7.2",
-        "grunt-contrib-uglify": "~0.2.7",
-        "grunt-contrib-copy": "~0.4.1",
-        "imagemagick": "~0.1.3",
-        "jasmine-node": "~1.11.0",
-        "karma": "~0.11",
-        "grunt-shell" : "~0.6.1",
-        "karma-ng-scenario": "~0.1",
-        "shelljs": "~0.2.6",
-        "karma-chrome-launcher": "~0.1.0",
-        "karma-jasmine": "~0.1.0"
+        "express": "3.x.x",
+        "grunt": "0.4.x",
+        "grunt-contrib-cssmin": "0.7.x",
+        "grunt-contrib-jasmine": "0.5.x",
+        "grunt-contrib-concat": "0.3.x",
+        "grunt-contrib-watch": "0.x.x",
+        "grunt-autoprefixer": "0.4.x",
+        "grunt-jsbeautifier": "0.2.x",
+        "grunt-contrib-jshint": "0.7.x",
+        "grunt-contrib-uglify": "0.2.x",
+        "grunt-contrib-copy": "0.4.x",
+        "grunt-contrib-less": "0.8.x",
+        "imagemagick": "0.1.x",
+        "jasmine-node": "1.11.x",
+        "karma": "0.x",
+        "grunt-shell" : "0.6.x",
+        "karma-ng-scenario": "0.x",
+        "shelljs": "0.2.x",
+        "karma-chrome-launcher": "0.1.x",
+        "karma-jasmine": "0.1.x",
+        "grunt-html-snapshots": "0.1.x"
     },
     "dependencies": {
         "express": "3.1.x"
     },
     "engines": {
         "node": "0.10.x",
-        "npm": "1.2.x"
+        "npm": "1.x.x"
     },
     "scripts": {
         "test": "grunt verify --verbose"
