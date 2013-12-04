@@ -1,13 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url> 
-    <loc>http://jmartin.ca/</loc> 
-    <loc>http://jmartin.ca/#/render</loc> 
-    <loc>http://jmartin.ca/#/photo</loc> 
-    <loc>http://jmartin.ca/#/about</loc>
-    <loc>http://jmartin.ca/public/views/home.html</loc> 
-    <loc>http://jmartin.ca/public/views/render.html</loc> 
-    <loc>http://jmartin.ca/public/views/photo.html</loc> 
-    <loc>http://jmartin.ca/public/views/about.html</loc>  
-  </url>
+    <url>
+        <loc>http://jmartin.ca/</loc>
+    </url>
+    <url>
+        <loc>http://jmartin.ca/#/render</loc>
+    </url>
+    <url>
+        <loc>http://jmartin.ca/#/photo</loc>
+    </url>
+    <url>
+        <loc>http://jmartin.ca/#/about</loc>
+    </url>
+    <url>
+        <loc>http://jmartin.ca/public/views/home.html</loc>
+    </url>
+    <url>
+        <loc>http://jmartin.ca/public/views/render.html</loc>
+    </url>
+    <url>
+        <loc>http://jmartin.ca/public/views/photo.html</loc>
+    </url>
+    <url>
+        <loc>http://jmartin.ca/public/views/about.html</loc>
+    </url>
 </urlset>
