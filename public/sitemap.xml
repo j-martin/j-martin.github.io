@@ -4,6 +4,10 @@
     <loc>http://jmartin.ca/</loc> 
     <loc>http://jmartin.ca/#/render</loc> 
     <loc>http://jmartin.ca/#/photo</loc> 
-    <loc>http://jmartin.ca/#/about</loc> 
+    <loc>http://jmartin.ca/#/about</loc>
+    <loc>http://jmartin.ca/public/views/home.html</loc> 
+    <loc>http://jmartin.ca/public/views/render.html</loc> 
+    <loc>http://jmartin.ca/public/views/photo.html</loc> 
+    <loc>http://jmartin.ca/public/views/about.html</loc>  
   </url>
 </urlset>

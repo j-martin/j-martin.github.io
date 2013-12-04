@@ -182,7 +182,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
@@ -327,7 +327,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -2590,11 +2590,11 @@ input[type="button"].btn-block {
   color: #333333;
 }
 .navbar-inverse {
-  background-color: #222222;
-  border-color: #080808;
+  background-color: #444444;
+  border-color: #2b2b2b;
 }
 .navbar-inverse .navbar-brand {
-  color: #999999;
+  color: #dddddd;
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
@@ -2602,10 +2602,10 @@ input[type="button"].btn-block {
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
-  color: #999999;
+  color: #bbbbbb;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #999999;
+  color: #dddddd;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
@@ -2616,7 +2616,7 @@ input[type="button"].btn-block {
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: #ffffff;
-  background-color: #080808;
+  background-color: #2b2b2b;
 }
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
@@ -2636,12 +2636,12 @@ input[type="button"].btn-block {
 }
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form {
-  border-color: #101010;
+  border-color: #323232;
 }
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
-  background-color: #080808;
+  background-color: #2b2b2b;
   color: #ffffff;
 }
 .navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
@@ -2649,8 +2649,8 @@ input[type="button"].btn-block {
   border-bottom-color: #ffffff;
 }
 .navbar-inverse .navbar-nav > .dropdown > a .caret {
-  border-top-color: #999999;
-  border-bottom-color: #999999;
+  border-top-color: #dddddd;
+  border-bottom-color: #dddddd;
 }
 .navbar-inverse .navbar-nav > .open > a .caret,
 .navbar-inverse .navbar-nav > .open > a:hover .caret,
@@ -2660,10 +2660,10 @@ input[type="button"].btn-block {
 }
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
-    border-color: #080808;
+    border-color: #2b2b2b;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
-    color: #999999;
+    color: #dddddd;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -2674,7 +2674,7 @@ input[type="button"].btn-block {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
     color: #ffffff;
-    background-color: #080808;
+    background-color: #2b2b2b;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a,
   .navbar-inverse .navbar-nav .open .dropdown-menu > .disabled > a:hover,
@@ -2684,7 +2684,7 @@ input[type="button"].btn-block {
   }
 }
 .navbar-inverse .navbar-link {
-  color: #999999;
+  color: #dddddd;
 }
 .navbar-inverse .navbar-link:hover {
   color: #ffffff;
@@ -3563,7 +3563,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 body {
   padding-top: 30px;
-  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 h1,
 h2,
@@ -3585,13 +3584,19 @@ h3 {
 }
 h2 {
   font-style: italic;
-  /*font-size: 2em;*/
 }
 .navbar-inverse .navbar-nav > li > a {
   font-size: 1.2em;
+  font-weight: 300;
 }
 .centering {
   margin: 0 auto;
+}
+.navbar-brand {
+  padding-left: 43px;
+  position: relative;
+  top: -1px;
+  left: 0px;
 }
 .fa {
   transform-style: preserve-3d;
@@ -3610,8 +3615,10 @@ h2 {
   top: 0px;
   padding-right: 6px;
 }
-div.about-bottom {
-  padding: 60px 60px;
+.fa-5x {
+  color: #ddd;
+  padding: 20px 0;
+  font-size: 5em;
 }
 ul.navbar-nav li:hover .fa {
   transform: rotateX(360deg);
@@ -3621,6 +3628,9 @@ a:hover .fa {
   transform: rotateX(360deg);
   -webkit-transform: rotateX(360deg);
 }
+div.about-bottom {
+  padding: 60px 60px;
+}
 dd ~ dt {
   padding-top: 1em;
 }
@@ -3629,12 +3639,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #3d3d3d;
-}
-.fa-5x {
-  color: #ddd;
-  padding: 20px 0;
-  font-size: 5em;
+  border-top: 1px solid #444444;
 }
 .img {
   display: block;
