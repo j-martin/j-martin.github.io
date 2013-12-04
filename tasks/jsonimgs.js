@@ -1,99 +1,66 @@
-/* jshint node: true */
-
 'use strict';
-// Grunt Task
 
+// Grunt Task
 // Creates json files based on the folder list. 
 // This is required since it the site should run
 // with no server-side scripting.
-
 // Requires ImageMagik installed on the server.
 
-
-
 //Creates the Grunt Module
+var im = require('imagemagick');
 
 module.exports = function(grunt) {
 
-  var im = require('imagemagick');
-  var image_listing = {
+  grunt.registerMultiTask('jsonimgs', 'Creates JSON files and cache images',
+    function() {
 
-    set_name: function(name, relative_path) {
-      this.name = name;
+      var images = [];
 
-      if (!relative_path) {
-        relative_path = '../public/';
-      }
-      this.base_dir = relative_path + 'img/';
-      this.cache_dir = relative_path + 'cache/';
-      this.json_dir = relative_path + 'json/';
-      this.cache_path = this.cache_dir + 'img/' + this.name;
+      grunt.file.defaultEncoding = 'utf8';
 
-      this.path_dir = this.base_dir + this.name;
+      this.files.forEach(function(file) {
 
-      grunt.verbose.writeln(this.base_dir,
-        this.cache_dir,
-        this.json_dir,
-        this.path_dir);
+        var cache_path = this.data.cache;
 
-      this.get_files();
+        // grunt.verbose.writeln(cache_path);
 
-    },
+        file.src.map(function(filepath) {
+          var filename = filepath.split('/').pop();
+          images.push(filename);
+          
+          if (cache_path) {
+            grunt.log.writeln('cache_path');
+            grunt.log.writeln(cache_path);
+            caching(filepath, cache_path + filename);
+          }
 
-    get_files: function() {
+        }, cache_path);
+      }, this);
 
-      var path = this.path_dir + '*.(jpg|png)';
-
-      // grunt.verbose.log(this.path);
-
-      this.files = grunt.file.expand(path);
-
-      var json_path = this.json_dir + this.name + '.json';
-      var json_data = JSON.stringify(this.files);
+      var json_path = this.data.dest;
+      var json_data = JSON.stringify(images);
 
       grunt.file.write(json_path, json_data);
 
-      grunt.verbose.writeln(this.files);
-      grunt.log.writeln('Wrote JSON to: ' + json_path);
-    },
-
-    caching: function() {
-
-      this.files.forEach(function(file) {
-        var file_path_original = this.path_dir + '/' + file;
-        var file_path_cache = this.cache_path + '/' + file;
-
-        grunt.verbose.writeln(file_path_original, file_path_cache);
-
+      var caching = function(filepath, file_path_cache) {
         if (!grunt.file.exists(file_path_cache)) {
           grunt.log.writeln(file_path_cache, 'is missing');
 
           im.resize({
-            srcPath: file_path_original,
+            srcPath: filepath,
             dstPath: file_path_cache,
             width: 800,
             quality: 0.9,
+
           }, function(err, stdout, stderr) {
             if (err) {
               throw err;
             }
-            grunt.log.writeln('Cached: ' + file_path_original);
+            grunt.log.writeln('Cached: ' + filepath);
           });
+
         }
-      }, this);
-    }
-  };
 
-  grunt.registerMultiTask('jsonimgs',
-    'Creates JSON files and cache images',
-    function() {
-      grunt.file.defaultEncoding = 'utf8';
-
-      var render = Object.create(image_listing);
-      var photo = Object.create(image_listing);
-
-      render.set_name('render', './public/');
-      photo.set_name('photo', './public/');
-      photo.caching();
+      };
     });
 };
