@@ -1,21 +1,24 @@
 /* jshint node: true */
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   'use strict';
   grunt.initConfig({
     html_snapshots: {
       // options for all targets
       options: {
-        source: 'http://localhost:5000/#/about',
+        input: "sitemap",
+        source: 'http://jmartin.ca/public/sitemap.xml',
         hostname: 'jmartin.ca',
-        selector: '#dynamic-content',
-
-        outputDirClean: 'true',
+        selector: {
+          "__default": "#dynamic-content",
+          "/": "#home-content"
+        },
+        // outputDirClean: 'true',
       },
       // the release target
       release: {
         options: {
-          outputDir: './snapshots/'
+          outputDir: './snapshots'
         }
       }
     },
