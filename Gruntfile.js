@@ -1,17 +1,17 @@
 /* jshint node: true */
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   'use strict';
   grunt.initConfig({
     html_snapshots: {
       // options for all targets
       options: {
-        input: "sitemap",
+        input: 'sitemap',
         source: 'http://jmartin.ca/public/sitemap.xml',
         hostname: 'jmartin.ca',
         selector: {
-          "__default": "#dynamic-content",
-          "/": "#home-content"
+          '__default': '#dynamic-content',
+          '/': '#home-content'
         },
         // outputDirClean: 'true',
       },
@@ -43,6 +43,19 @@ module.exports = function (grunt) {
         ],
         // Run Sass, autoprefixer, and CSSO
         tasks: ['less-custom'],
+        options: {
+          livereload: true,
+        },
+      },
+      livereload: {
+        files: [
+          'js/*',
+          'public/**/*',
+          'index.html',
+        ],
+        options: {
+          livereload: true,
+        },
       }
     },
 
@@ -194,7 +207,7 @@ module.exports = function (grunt) {
     'cssmin'
   ]);
 
-  grunt.registerTask('less-custom', ['concat', 'autoprefixer', 'less']);
+  grunt.registerTask('less-custom', ['concat', 'autoprefixer', 'less:production']);
 
   grunt.registerTask('server', [
     'default',
