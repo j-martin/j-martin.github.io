@@ -18,6 +18,12 @@ jmartin.config(function ($routeProvider) {
     controller: 'mainController'
   })
 
+  // route for the coding page
+  .when('/code', {
+    templateUrl: '/public/views/code.html',
+    controller: 'mainController'
+  })
+
   // route for the photo page
   .when('/photo', {
     templateUrl: '/public/views/photo.html',
