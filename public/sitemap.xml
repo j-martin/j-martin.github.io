@@ -7,6 +7,9 @@
         <loc>http://jmartin.ca/#/render</loc>
     </url>
     <url>
+        <loc>http://jmartin.ca/#/code</loc>
+    </url>
+    <url>
         <loc>http://jmartin.ca/#/photo</loc>
     </url>
     <url>
@@ -14,6 +17,9 @@
     </url>
     <url>
         <loc>http://jmartin.ca/public/views/home.html</loc>
+    </url>
+    <url>
+        <loc>http://jmartin.ca/public/views/code.html</loc>
     </url>
     <url>
         <loc>http://jmartin.ca/public/views/render.html</loc>
