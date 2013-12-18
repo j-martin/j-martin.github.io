@@ -2,7 +2,7 @@
 var jmartin = angular.module('jmartin', ['ngRoute', 'ngAnimate']);
 
 // configure our routes
-jmartin.config(function ($routeProvider) {
+jmartin.config(function($routeProvider) {
   'use strict';
   $routeProvider
 
@@ -17,7 +17,7 @@ jmartin.config(function ($routeProvider) {
     templateUrl: '/public/views/about.html',
     controller: 'mainController'
   })
-
+  
   // route for the coding page
   .when('/code', {
     templateUrl: '/public/views/code.html',
@@ -38,35 +38,35 @@ jmartin.config(function ($routeProvider) {
 });
 
 // create the controller and inject Angular's $scope
-jmartin.controller('mainController', function ($scope) {
+jmartin.controller('mainController', function($scope) {
   $scope.message = 'Welcome!';
   $scope.raise = false;
 });
 
-jmartin.controller('renderController', function ($scope, $http) {
-  $http.get('/public/json/render.json').success(function (data) {
+jmartin.controller('renderController', function($scope, $http) {
+  $http.get('/public/json/render.json').success(function(data) {
     $scope.message = 'Images: Loaded!';
     $scope.imgs = angular.fromJson(data);
-  }).error(function () {
+  }).error(function() {
     $scope.imgs = [];
     $scope.raise = true;
   });
 });
 
-jmartin.controller('photoController', function ($scope, $http) {
+jmartin.controller('photoController', function($scope, $http) {
 
-  $http.get('/public/json/photo.json').success(function (data) {
+  $http.get('/public/json/photo.json').success(function(data) {
     $scope.imgs = angular.fromJson(data);
 
-  }).error(function () {
+  }).error(function() {
     $scope.imgs = [];
     $scope.raise = true;
   });
-}).directive('lazy', function ($timeout) {
+}).directive('lazy', function($timeout) {
   return {
     restrict: 'C',
-    link: function () {
-      $timeout(function () {
+    link: function() {
+      $timeout(function() {
         Echo.init({
           offset: 100,
           throttle: 250
