@@ -1,5 +1,4 @@
-jmartin.ca
-==================
+# jmartin.ca
 
 My personal website hosted on [github page](http://g.jmartin.ca) and the main [host](http://jmartin.ca)
 
@@ -8,3 +7,12 @@ As of Nov. 2013 it's mirrored on [AWS](http://ec.jmartin.ca), [Heroku](http://he
 [![Dependency Status](https://david-dm.org/j-martin/j-martin.github.io.png)](https://david-dm.org/j-martin/j-martin.github.io)
 
 [![devDependency Status](https://david-dm.org/j-martin/j-martin.github.io/dev-status.png)](https://david-dm.org/j-martin/j-martin.github.io#info=devDependencies)
+
+## Build
+
+```
+npm install -g grunt grunt-cli
+npm install
+bower install
+grunt
+```
