@@ -2,7 +2,7 @@
   "globals": {
     "module": true,
     "define": true,
-    "Echo": true,
+    "echo": true,
     "angular": true,
     "$": true,
     "grunt": true,

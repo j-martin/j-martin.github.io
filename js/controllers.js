@@ -17,7 +17,7 @@ jmartin.config(function($routeProvider) {
     templateUrl: '/public/views/about.html',
     controller: 'mainController'
   })
-  
+
   // route for the coding page
   .when('/code', {
     templateUrl: '/public/views/code.html',
@@ -67,7 +67,7 @@ jmartin.controller('photoController', function($scope, $http) {
     restrict: 'C',
     link: function() {
       $timeout(function() {
-        Echo.init({
+        echo.init({
           offset: 100,
           throttle: 250
         });
