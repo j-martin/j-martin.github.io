@@ -13,7 +13,6 @@ module.exports = function (grunt) {
           '__default': '#dynamic-content',
           '/': '#home-content'
         },
-        // outputDirClean: 'true',
       },
       // the release target
       release: {
@@ -59,7 +58,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Auto-prefix CSS properties using Can I Use?
     autoprefixer: {
       options: {
         browsers: ['last 3 versions', 'bb 10', 'android 3']
@@ -161,13 +159,12 @@ module.exports = function (grunt) {
       target: {
         files: {
           './public/js/min.js': [
-            './bower_components/jquery/jquery.js',
+            './bower_components/jquery/dist/jquery.js',
             './public/js/bootstrap-stripped.js',
             './bower_components/angular/angular.js',
-            './bower_components/angular-route/angular-route.js',
             './bower_components/angular-animate/angular-animate.js',
-            //'./bower_components/jquery.lazyload/jquery.lazyload.js'
-            './bower_components/echo/dist/echo.js'
+            './bower_components/angular-route/angular-route.js',
+            './bower_components/echo/dist/echo.js',
           ],
         }
       }
