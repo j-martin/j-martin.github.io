@@ -178,9 +178,9 @@
 
     this.options.selector ?
       (this._options = $.extend({}, this.options, {
-      trigger: 'manual',
-      selector: ''
-    })) :
+        trigger: 'manual',
+        selector: ''
+      })) :
       this.fixTitle()
   }
 
@@ -374,9 +374,9 @@
     var $tip = this.tip()
     var e = $.Event('hide.bs.' + this.type)
 
-      function complete() {
-        if (that.hoverState != 'in') $tip.detach()
-      }
+    function complete() {
+      if (that.hoverState != 'in') $tip.detach()
+    }
 
     this.$element.trigger(e)
 
@@ -416,22 +416,22 @@
 
   Tooltip.prototype.getCalculatedOffset = function (placement, pos, actualWidth, actualHeight) {
     return placement == 'bottom' ? {
-      top: pos.top + pos.height,
-      left: pos.left + pos.width / 2 - actualWidth / 2
-    } :
+        top: pos.top + pos.height,
+        left: pos.left + pos.width / 2 - actualWidth / 2
+      } :
       placement == 'top' ? {
         top: pos.top - actualHeight,
         left: pos.left + pos.width / 2 - actualWidth / 2
-    } :
+      } :
       placement == 'left' ? {
         top: pos.top + pos.height / 2 - actualHeight / 2,
         left: pos.left - actualWidth
-    } :
-    /* placement == 'right' */
-    {
-      top: pos.top + pos.height / 2 - actualHeight / 2,
-      left: pos.left + pos.width
-    }
+      } :
+      /* placement == 'right' */
+      {
+        top: pos.top + pos.height / 2 - actualHeight / 2,
+        left: pos.left + pos.width
+      }
   }
 
   Tooltip.prototype.getTitle = function () {
@@ -1005,11 +1005,11 @@
   $.fn.emulateTransitionEnd = function (duration) {
     var called = false,
       $el = this
-      $(this).one($.support.transition.end, function () {
-        called = true
-      })
-      var callback = function () {
-        if (!called) $($el).trigger($.support.transition.end)
+    $(this).one($.support.transition.end, function () {
+      called = true
+    })
+    var callback = function () {
+      if (!called) $($el).trigger($.support.transition.end)
     }
     setTimeout(callback, duration)
     return this
