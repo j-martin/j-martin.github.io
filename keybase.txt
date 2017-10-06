@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/jm_
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jmartin.ca
+  * I am jm_ (https://keybase.io/jm_) on keybase.
+  * I have a public key ASBxarwLOCAmCsxLMLJXXblEwoZvSiuhi0Nn4p9DMGR2WQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120716abc0b3820260acc4b30b2575db944c2866f4a2ba18b4367e29f43306476590a",
+      "host": "keybase.io",
+      "kid": "0120716abc0b3820260acc4b30b2575db944c2866f4a2ba18b4367e29f43306476590a",
+      "uid": "4cc0b313d76aa73d982c271365259b19",
+      "username": "jm_"
+    },
+    "merkle_root": {
+      "ctime": 1507266353,
+      "hash": "6050af1fe9b0696f6b32823151d86d1e4814f375a205d360df85efbf3fa37e880f1f577d3dee6b45e6d42fff9f5667b4a8e858597c652fe737ecaf950d8fff20",
+      "hash_meta": "e5d8975a4d60c0f4228f25586e84a3b5b4bc1d56cb44671e7fdfc51d6cfff2e5",
+      "seqno": 1522853
+    },
+    "service": {
+      "hostname": "jmartin.ca",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.33"
+  },
+  "ctime": 1507266361,
+  "expire_in": 504576000,
+  "prev": "96a5b46a7b9089f491e74906632b61037b1564b298c9604932622735461b8c06",
+  "seqno": 22,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgcWq8CzggJgrMSzCyV125RMKGb0oroYtDZ+KfQzBkdlkKp3BheWxvYWTFAz57ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNzE2YWJjMGIzODIwMjYwYWNjNGIzMGIyNTc1ZGI5NDRjMjg2NmY0YTJiYTE4YjQzNjdlMjlmNDMzMDY0NzY1OTBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNzE2YWJjMGIzODIwMjYwYWNjNGIzMGIyNTc1ZGI5NDRjMjg2NmY0YTJiYTE4YjQzNjdlMjlmNDMzMDY0NzY1OTBhIiwidWlkIjoiNGNjMGIzMTNkNzZhYTczZDk4MmMyNzEzNjUyNTliMTkiLCJ1c2VybmFtZSI6ImptXyJ9LCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTUwNzI2NjM1MywiaGFzaCI6IjYwNTBhZjFmZTliMDY5NmY2YjMyODIzMTUxZDg2ZDFlNDgxNGYzNzVhMjA1ZDM2MGRmODVlZmJmM2ZhMzdlODgwZjFmNTc3ZDNkZWU2YjQ1ZTZkNDJmZmY5ZjU2NjdiNGE4ZTg1ODU5N2M2NTJmZTczN2VjYWY5NTBkOGZmZjIwIiwiaGFzaF9tZXRhIjoiZTVkODk3NWE0ZDYwYzBmNDIyOGYyNTU4NmU4NGEzYjViNGJjMWQ1NmNiNDQ2NzFlN2ZkZmM1MWQ2Y2ZmZjJlNSIsInNlcW5vIjoxNTIyODUzfSwic2VydmljZSI6eyJob3N0bmFtZSI6ImptYXJ0aW4uY2EiLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4zMyJ9LCJjdGltZSI6MTUwNzI2NjM2MSwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsInByZXYiOiI5NmE1YjQ2YTdiOTA4OWY0OTFlNzQ5MDY2MzJiNjEwMzdiMTU2NGIyOThjOTYwNDkzMjYyMjczNTQ2MWI4YzA2Iiwic2Vxbm8iOjIyLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQPE8SNmfQixMlLJJxxfY1N9GlermOOgj3goUSwMBx4T2WH0zSN2sHFbsI0+mh3KBKNGzK51VYen4U4bgui+Rkgaoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCDvXKur29EEWiA2Qz2THMAvEWSCZcMbKT6bfo5F/FbkQKN0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jm_
+
+==================================================================
